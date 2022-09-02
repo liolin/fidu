@@ -21,6 +21,10 @@ description:         Please see the README on GitHub at <https://github.com/liol
 
 dependencies:
 - base >= 4.7 && < 5
+- cryptohash-sha256
+- bytestring
+- data-ascii
+- SHA
 
 ghc-options:
 - -Wall
