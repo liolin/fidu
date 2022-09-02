@@ -1,13 +1,15 @@
 module Main (main) where
 
-import qualified Data.ByteString as B
-import qualified Crypto.Hash.SHA256 as SHA256
-import Data.Digest.Pure.SHA
-import qualified Data.Ascii.Word8 as C
-import Lib
+import Lib (exampleWithFile, exampleWithDir)
 
 main :: IO ()
 main = do
-  s <- example
-  putStrLn s
+  putStrLn "Example with hard coded file"
+  s <- exampleWithFile
+  putStrLn $ fst s ++ ": " ++ snd s
+
+  putStrLn "\nExample with hard coded dir path"
+  s <- exampleWithDir -- s :: [String]
+  mapM_ (\x -> putStrLn $ fst x ++ ": " ++ snd x) s
+  putStrLn "Done"
 
